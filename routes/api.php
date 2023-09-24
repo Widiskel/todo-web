@@ -32,5 +32,9 @@ Route::group(['prefix' => 'daily-task','middleware' => 'auth:sanctum'],function 
     Route::get('/', 'ApiDailyTaskController@get_daily_task');
     Route::get('/done/{task}', 'ApiDailyTaskController@done_task');
 });
+Route::group(['prefix' => 'user','middleware' => 'auth:sanctum'],function () {
+    Route::get('/', 'ApiUserController@user');
+    Route::post('/edit', 'ApiUserController@edit_user');
+});
 
 
