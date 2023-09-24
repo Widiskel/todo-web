@@ -29,7 +29,7 @@ class ApiUserController extends Controller
         if ($validator->fails()) {
             return Helper::error($validator->errors()->first());
         }
-
+        
         try {
             DB::beginTransaction();
             $user->name = $request->name;
